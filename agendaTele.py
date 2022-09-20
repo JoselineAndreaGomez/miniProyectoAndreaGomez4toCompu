@@ -1,25 +1,18 @@
 class agentaTelefonica:
-    def __init__(self,nombreCompleto,noDPI,direccion):
+    def __init__(self,nombreCompleto,numero):
         self.__nombre=nombreCompleto
-        self.__noDPI=noDPI
-        self.__direccion=direccion
+        self.__numero=numero
     
     #crear métodos GETTER
     def verNombre(self):
         return self.__nombre
     
-    def verNoDPI(self):
-        return self.__noDPI
-    
-    def verdireccion(self):
-        return self.__direccion
+    def vernumero(self):
+        return self.__numero
     
     #métodos SETTER
     def modificarNombre(self,nuevonombre):
         self.__nombre=nuevonombre
     
-    def modificarDPI(self,nuevoDPI):
-        self.__noDPI=nuevoDPI
-    
-    def modificardireccion(self,nuevadireccion):
-        self.__direccion=nuevadireccion
+    def modificarNum(self,nuevonum):
+        self.__numero=nuevonum
