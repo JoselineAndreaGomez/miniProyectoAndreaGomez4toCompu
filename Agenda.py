@@ -1,4 +1,5 @@
 from agendaTele import agentaTelefonica
+from io import open
 registro=[]
 
 #Crear contactos
@@ -58,6 +59,22 @@ def buscarEnEspecifico(nombre):
         if encontrado==False:
             print('Nombre ingresado no existente')
 
+#registro en html
+def crearReporte():
+ registro=open("registro.html", "w")
+ registro.write("<!doctype html>\n")
+ registro.write("<html>\n")
+ registro.write("<head>\n")
+ registro.write("\t<title>Agenda telefonica 2022</title>\n")
+ registro.write("</head>\n")
+ registro.write("<body>\n")
+ registro.write("\t<center>\n")
+ registro.write("\t<h1>Mis contactos</h1>\n")
+ registro.write("\t</center>\n")
+ registro.write("</body>\n")
+ registro.write("</html>\n")
+ registro.close()
+ print('Reporte en HTML creado con éxito')
 
 #ARRANQUE DEL PROGRAMA------------------------------------------------------------
 def main():
@@ -100,7 +117,7 @@ def main():
             print('---------------------------------------------------- \n\n')
 
         elif op==6:
-            print('Aquí va el registro ')
+            crearReporte()
             print('---------------------------------------------------- \n\n')
 
         elif op==7:
@@ -108,6 +125,7 @@ def main():
         else:
             print('Número de opción no válido')
             print('-------------------------------------------------------- \n\n')
+
 #INICIAR EL PROGRAMA        
 main()
 
