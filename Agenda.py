@@ -61,20 +61,31 @@ def buscarEnEspecifico(nombre):
 
 #registro en html
 def crearReporte():
- registro=open("registro.html", "w")
- registro.write("<!doctype html>\n")
- registro.write("<html>\n")
- registro.write("<head>\n")
- registro.write("\t<title>Agenda telefonica 2022</title>\n")
- registro.write("</head>\n")
- registro.write("<body>\n")
- registro.write("\t<center>\n")
- registro.write("\t<h1>Mis contactos</h1>\n")
- registro.write("\t</center>\n")
- registro.write("</body>\n")
- registro.write("</html>\n")
- registro.close()
+ registro3=open("registro.html", "w")
+ registro3.write("<!doctype html>\n")
+ registro3.write("<html>\n")
+ registro3.write("<head>\n")
+ registro3.write("\t<title>Agenda telefonica 2022</title>\n")
+ registro3.write("</head>\n")
+ registro3.write("<body>\n")
+ registro3.write("\t<center>\n")
+ registro3.write("\t<h1>Mis contactos</h1>\n")
+ registro3.write('\t<table border="1">\n')
+ registro3.write("\t\t<tr>\n")
+ registro3.write("\t\t\t<td>Número telefónico</td><td>Nombre del contacto</td>\n")
+ for i in range(len(registro)):
+    registro3.write("\t\t<tr>\n")
+    registro3.write("\t\t\t<td>"+str(registro[i].vernumero())+"</td><td>"+registro[i].verNombre()+"</td>")
+    registro3.write("\t\t</tr>\n")
+ registro3.write("\t\t</tr>\n")
+ registro3.write("</table>\n")
+ registro3.write("\t</center>\n")
+ registro3.write("</body>\n")
+ registro3.write("</html>\n")
+ registro3.close()
  print('Reporte en HTML creado con éxito')
+
+
 
 #ARRANQUE DEL PROGRAMA------------------------------------------------------------
 def main():
