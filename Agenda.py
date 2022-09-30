@@ -1,6 +1,6 @@
 from agendaTele import agentaTelefonica
 from io import open
-registro=[]
+registro=[agentaTelefonica('Luis',47273172), agentaTelefonica('Pedro',45152365),agentaTelefonica('Wilmer',98754123)]
 
 #Crear contactos
 def nuevocontacto(nombre,numero):
@@ -12,8 +12,7 @@ def mostrarcontactos():
     for i in range(len(registro)):
         print(registro[i].verNombre())
         print(registro[i].vernumero())
-        print('\n')
-    print('------------------------------------------')
+    print('------------------------------------------ \n\n')
 
 #Buscar contacto y modificar
 
@@ -45,19 +44,19 @@ def buscaryeliminar(nombre):
 
 #buscaracontacto en específico
 def buscarEnEspecifico(nombre):
-    if len(registro) ==0:
-        print('El registro de números está vacía')
+    if len(registro) == 0:
+        print("La lista esta vacía, no hay contactos que buscar...")
     else:
-        encontrado=False
-        for i in range (len(registro)):
-            if registro[i].verNombre()==nombre:
-                print('El número telefónico es: ',registro[i].vernumero())
-                encontrado=True
+        buscar = False
+        for i in range(len(registro)):
+            if registro[i].verNombre() == nombre:
+                print("EL número telefónico es:", registro[i].vernumero())
+                buscar = True
                 break
             else:
-                encontrado=False
-        if encontrado==False:
-            print('Nombre ingresado no existente')
+                buscar= False
+        if buscar == False:
+            print("Dato no existente...")
 
 #registro en html
 def crearReporte():
@@ -124,7 +123,7 @@ def main():
 
         elif op==5:
             nombre=input('Ingrese el nombre del contacto: ')
-            print(buscarEnEspecifico(nombre))
+            buscarEnEspecifico(nombre)
             print('---------------------------------------------------- \n\n')
 
         elif op==6:
